@@ -1,0 +1,23 @@
+<%= render "account_header" %>
+
+<h1>Articles</h1>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+    	<%= link_to article.title, article_path(article) %>
+
+    	<% if current_user then %>
+    	  <%= link_to "edit", edit_article_path(article) %>
+    	  <%= link_to "delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>
+    	<% end %>  
+
+    </li>
+  <% end %>
+</ul>
+
+<% if current_user then %>
+  <p>
+    <%= link_to "Create article", new_article_path %>
+  </p>
+<% end %>  

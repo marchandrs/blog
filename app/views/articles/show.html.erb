@@ -1,0 +1,20 @@
+<%= render "account_header" %>
+
+<h1><%= @article.title %></h1>
+
+<p>
+  <%= @article.text %>
+</p>
+
+<% if current_user then %>
+  <%= link_to "edit", edit_article_path(@article) %>
+<% end %>  
+<%= link_to :back, articles_path %>
+
+<h3>Add a comment: </h3>
+<%= render "comments/form" %>
+
+<% unless @article.comments.count == 0 %>
+	<h3>Comments:</h3>
+  <%= render @article.comments %>
+<% end %>
