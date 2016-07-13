@@ -11,8 +11,8 @@ Things you may want to cover:
 
 * Configuration
 
-#Facebook login needs ENV[fb_app_id] and ENV[fb_app_secret], 
-#used in: <tt>config/initializers/omniauth.rb</tt>
+Facebook login needs fb_app_id and fb_app_secret set in the environment variables, 
+used in: <tt>config/initializers/omniauth.rb</tt>
 
 
 * Database creation
